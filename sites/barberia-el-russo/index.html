@@ -3,73 +3,140 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Barberia El Russo — barberia en Providencia</title>
-<meta name="description" content="Barberia El Russo: corte">
+<title>Barberia El Russo — Barberia en Providencia</title>
+<meta name="description" content="Barberia El Russo: barberia en Providencia. Corte de cabello, Barba y perfilado, Afeitado clásico.">
+<meta property="og:title" content="Barberia El Russo — Barberia">
+<meta property="og:description" content="Barberia El Russo: barberia en Providencia. Corte de cabello, Barba y perfilado, Afeitado clásico.">
+<meta property="og:type" content="business.business">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Barberia El Russo",
+  "description": "Tu barberia de confianza — corte de cabello, barba y perfilado",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "",
+    "streetAddress": "local, Av. Vicuña Mackenna 6690, La Florida, Región Metropolitana, Chile",
     "addressLocality": "Providencia",
     "addressCountry": "CL"
   },
-  "telephone": "",
-  "url": "https://scout-sites.vercel.app/barberia-el-russo"
+  "url": "https://scout-sites.vercel.app/barberia-el-russo/",
+  "telephone": "+56984546750"
 }
 </script>
 <style>
-:root { --brand: #0F766E; --ink: #171717; --bg: #FFFFFF; }
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800;900&family=Archivo+Narrow:wght@500;700&display=swap');
+:root {
+  --brand: #1A1A1A; --brand2: #C9A227; --ink: #1C1917; --paper: #FAFAF9;
+}
 * { margin:0; padding:0; box-sizing:border-box; }
-body { font-family: system-ui, sans-serif; color: var(--ink); line-height:1.6; }
-.hero { min-height:72vh; display:grid; place-items:center; text-align:center;
-  background: linear-gradient(160deg, var(--brand), #134E4A); color:#fff; padding:2rem; }
-.hero h1 { font-size: clamp(2.2rem, 7vw, 4.5rem); letter-spacing:-.02em;
-  animation: rise .9s cubic-bezier(.2,.8,.2,1) both; }
-.hero p { margin-top:1rem; font-size:1.15rem; opacity:.92; animation: rise 1.1s .15s both; }
-@keyframes rise { from { opacity:0; transform:translateY(28px); } }
-.cta { display:inline-block; margin-top:2rem; background:#fff; color:var(--ink);
-  padding:.9rem 2rem; border-radius:999px; font-weight:700; text-decoration:none;
-  box-shadow:0 8px 24px rgba(0,0,0,.18); }
-section { max-width:1000px; margin:0 auto; padding:3.5rem 1.5rem; }
-h2 { font-size:1.7rem; margin-bottom:1.4rem; }
-.servicios { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; }
-.card { border:1.5px solid #e5e5e5; border-radius:14px; padding:1.2rem; }
-.datos { background:#F7F7F5; border-radius:14px; padding:1.5rem; }
-.wa { position:fixed; right:1.2rem; bottom:1.2rem; background:#25D366; color:#fff;
-  width:58px; height:58px; border-radius:50%; display:grid; place-items:center;
-  font-size:1.6rem; text-decoration:none; box-shadow:0 6px 20px rgba(0,0,0,.25); }
-footer { text-align:center; padding:2rem; color:#71717A; font-size:.85rem; }
-@media (prefers-reduced-motion: reduce) { * { animation:none !important; } }
+html { scroll-behavior:smooth; }
+body { font-family:'Archivo',system-ui,sans-serif; color:var(--ink); background:var(--paper); line-height:1.6; }
+/* HERO con dirección visual del patrón MotionSites */
+.hero { position:relative; min-height:86vh; display:grid; place-items:center; text-align:center;
+  overflow:hidden; color:#fff; background:linear-gradient(160deg, #1A1A1A 0%, #1A1A1A 55%, #C9A227dd 130%); }
+.hero::before { content:''; position:absolute; inset:0; background-image:radial-gradient(ellipse 65% 45% at 75% 15%, #C9A22755, transparent); opacity:1;; }
+.hero-grain { position:absolute; inset:0;
+  background-image:radial-gradient(rgba(255,255,255,.06) 1px, transparent 1px);
+  background-size:22px 22px; animation:drift 14s linear infinite; }
+@keyframes drift { to { transform:translateY(22px); } }
+.hero-inner { position:relative; z-index:2; padding:2rem; max-width:900px;
+  animation:rise .9s cubic-bezier(.2,.8,.2,1) both; }
+@keyframes rise { from { opacity:0; transform:translateY(34px); } }
+.hero .cat { font-family:'Archivo Narrow'; letter-spacing:.35em; text-transform:uppercase;
+  font-size:.78rem; color:#F5C518; margin-bottom:1rem; }
+.hero h1 { font-weight:900; font-size:clamp(2.6rem, 8vw, 6rem); letter-spacing:-.03em; line-height:.95; text-transform:uppercase; }
+.hero p { margin-top:1.1rem; font-size:clamp(1rem,2.4vw,1.3rem); opacity:.88; max-width:560px; margin-inline:auto; }
+.hero .ctas { margin-top:2rem; display:flex; gap:.8rem; justify-content:center; flex-wrap:wrap; }
+.btn { display:inline-block; padding:.95rem 2.1rem; border-radius:999px; font-weight:700;
+  text-decoration:none; font-size:1rem; transition:transform .15s ease; }
+.btn:hover { transform:translateY(-2px); }
+.btn-solid { background:#F5C518; color:#111; }
+.btn-ghost { border:1.5px solid rgba(255,255,255,.4); color:inherit; }
+/* marquee del patrón (si aplica) */
+.marquee { overflow:hidden; background:var(--ink); color:var(--paper); padding:.7rem 0; white-space:nowrap; }
+.marquee span { display:inline-block; animation:mq 22s linear infinite; font-family:'Archivo Narrow';
+  letter-spacing:.2em; text-transform:uppercase; font-size:.85rem; }
+@keyframes mq { to { transform:translateX(-50%); } }
+section { max-width:1080px; margin:0 auto; padding:4.5rem 1.5rem; }
+.sec-head { display:flex; align-items:baseline; gap:1rem; margin-bottom:2rem; }
+.sec-head .num { font-family:'Archivo Narrow'; color:#F5C518; font-weight:700; }
+h2 { font-size:clamp(1.6rem,4vw,2.4rem); font-weight:800; letter-spacing:-.02em; }
+.servicios { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.1rem; }
+.svc { background:#fff; border:1.5px solid #E7E5E4; border-radius:16px; padding:1.4rem;
+  transition:transform .2s ease, box-shadow .2s ease; }
+.svc:hover { transform:translateY(-4px); box-shadow:0 14px 34px rgba(0,0,0,.09); }
+.svc .ico { width:44px; height:44px; border-radius:12px; background:var(--brand); color:#fff;
+  display:grid; place-items:center; font-weight:800; margin-bottom:.8rem; }
+.svc h3 { font-size:1.08rem; margin-bottom:.3rem; }
+.svc p { color:#57534E; font-size:.92rem; }
+/* info */
+.info-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.1rem; }
+.info-card { background:var(--brand); color:#fff; border-radius:16px; padding:1.5rem; }
+.info-card h3 { font-family:'Archivo Narrow'; text-transform:uppercase; letter-spacing:.18em;
+  font-size:.75rem; opacity:.75; margin-bottom:.5rem; }
+.info-card p, .info-card a { color:#fff; font-size:1.02rem; text-decoration:none; }
+.rating { display:inline-flex; align-items:center; gap:.4rem; margin-top:.6rem; background:rgba(255,255,255,.14);
+  border-radius:999px; padding:.3rem .9rem; font-size:.9rem; }
+.mapa { margin-top:1.1rem; border-radius:16px; overflow:hidden; border:1.5px solid #E7E5E4; }
+.mapa iframe { width:100%; height:320px; border:0; display:block; }
+.redes { margin-top:1rem; display:flex; gap:.7rem; flex-wrap:wrap; }
+.redes a { font-size:.85rem; font-weight:700; color:var(--brand); border:1.5px solid var(--brand);
+  border-radius:999px; padding:.4rem 1.1rem; text-decoration:none; }
+footer { text-align:center; padding:2.5rem 1rem 3rem; color:#78716C; font-size:.85rem; }
+.wa { position:fixed; right:1.2rem; bottom:1.2rem; background:#25D366; color:#fff; width:60px; height:60px;
+  border-radius:50%; display:grid; place-items:center; font-size:1.7rem; text-decoration:none;
+  box-shadow:0 8px 24px rgba(37,211,102,.4); z-index:9; transition:transform .15s; }
+.wa:hover { transform:scale(1.08); }
+@media (prefers-reduced-motion: reduce) { * { animation:none !important; transition:none !important; } html { scroll-behavior:auto; } }
 </style>
 </head>
 <body>
 <header class="hero">
-  <div>
+  <div class="hero-grain"></div>
+  <div class="hero-inner">
+    <div class="cat">Barberia · Providencia</div>
     <h1>Barberia El Russo</h1>
-    <p>Tu barberia de confianza en Providencia</p>
-    <a class="cta" href="#contacto">Contáctanos</a>
+    <p>Tu barberia de confianza — corte de cabello, barba y perfilado</p>
+    <div class="ctas">
+      <a class="btn btn-solid" href="https://wa.me/56984546750" target="_blank">Reservar por WhatsApp</a>
+      <a class="btn btn-ghost" href="#info">Ubicación y horarios</a>
+    </div>
   </div>
 </header>
-<section>
-  <h2>Servicios</h2>
+
+<section id="servicios">
+  <div class="sec-head"><span class="num">01</span><h2>Servicios</h2></div>
   <div class="servicios">
-    <div class="card"><h3>corte</h3><p>Barberia El Russo — corte</p></div>
-    <div class="card"><h3>barba</h3><p>Barberia El Russo — barba</p></div>
-    <div class="card"><h3>afeitado</h3><p>Barberia El Russo — afeitado</p></div>
+    <div class="svc"><div class="ico">✂</div>
+      <h3>Corte de cabello</h3><p>Barberia El Russo — Corte de cabello. Atención con agenda por WhatsApp.</p></div>
+    <div class="svc"><div class="ico">◆</div>
+      <h3>Barba y perfilado</h3><p>Barberia El Russo — Barba y perfilado. Atención con agenda por WhatsApp.</p></div>
+    <div class="svc"><div class="ico">●</div>
+      <h3>Afeitado clásico</h3><p>Barberia El Russo — Afeitado clásico. Atención con agenda por WhatsApp.</p></div>
   </div>
 </section>
-<section id="contacto">
-  <h2>Encuéntranos</h2>
-  <div class="datos">
-    <p><strong>Dirección:</strong> , Providencia</p>
-    
-    
+<section id="info">
+  <div class="sec-head"><span class="num">02</span><h2>Encuéntranos</h2></div>
+  <div class="info-grid">
+    <div class="info-card">
+      <h3>Dirección</h3>
+      <p>local, Av. Vicuña Mackenna 6690, La Florida, Región Metropolitana, Chile</p>
+      
+    </div>
+    <div class="info-card">
+      <h3>Horarios</h3>
+      <p>domingo12–7 p.m.</p>
+    </div>
+    <div class="info-card">
+      <h3>Contacto</h3>
+      <p><a href="https://wa.me/56984546750">+56 984 5467 50</a></p>
+      <div class="redes"><a href="https://instagram.com/barberiaelrusso?igshid=MmU2YjMzNjRlOQ==" target="_blank">Instagram ↗</a></div>
+    </div>
   </div>
+  <div class="mapa"><iframe loading="lazy" title="Mapa" src="https://www.google.com/maps?q=%EE%83%88local%2C+Av.+Vicu%C3%B1a+Mackenna+6690%2C+La+Florida%2C+Regi%C3%B3n+Metropolitana%2C+Chile&output=embed&hl=es"></iframe></div>
 </section>
-<a class="wa" href="#contacto" aria-label="WhatsApp">✆</a>
-<footer>© 2026 Barberia El Russo · Providencia, Chile</footer>
+<footer>© 2026 Barberia El Russo · Providencia · Sitio preview generado por WebCreator</footer>
+<a class="wa" href="https://wa.me/56984546750" target="_blank" aria-label="WhatsApp">✆</a>
 </body>
 </html>
