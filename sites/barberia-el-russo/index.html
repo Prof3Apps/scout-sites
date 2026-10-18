@@ -49,6 +49,10 @@ nav a.nav-cta { background:var(--gold); color:#151515; font-weight:700; font-siz
   padding:.55rem 1.3rem; border-radius:999px; text-decoration:none; }
 /* HERO */
 .hero { position:relative; color:#fff; overflow:hidden; background:var(--bg); }
+.hero-img { position:absolute; inset:0; background-size:cover;
+  background-position:center; opacity:.28; filter:grayscale(.25) contrast(1.05); }
+.hero-img::after { content:''; position:absolute; inset:0;
+  background:linear-gradient(90deg, var(--bg) 22%, transparent 75%); }
 .hero-inner { position:relative; z-index:2; padding:6.5rem 0 5.5rem; max-width:820px; }
 .pill { display:inline-flex; align-items:center; gap:.5rem; background:rgba(255,255,255,.08);
   border:1px solid rgba(255,255,255,.14); color:var(--gold); border-radius:999px;
@@ -160,6 +164,7 @@ footer b { color:#fff; font-family:'Sora'; }
   </div>
 </nav>
 <header class="hero">
+<div class="hero-img" style="background-image:url('assets/negocio_0.jpg')"></div>
   <div class="grain"></div>
   <div class="wrap hero-inner">
     <div class="pill">★ 4.9 en Google · clientes felices</div>
